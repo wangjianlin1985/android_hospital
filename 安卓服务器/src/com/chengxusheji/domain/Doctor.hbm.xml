@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="Doctor" table="Doctor">
+
+          <!-- 主键医生编号 -->
+          <id name="doctorNo" type="string" length="20">
+            <generator class="assigned"/>
+          </id>
+
+          <!-- 简单字符串属性: 登录密码 -->
+          <property
+            name="password"
+            column="password"
+            type="string"
+            length="20"
+          />
+
+          <!-- 多对一属性: 所在科室 -->
+          <many-to-one name="departmentObj"
+            column="departmentObj"
+            class="Department"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 姓名 -->
+          <property
+            name="name"
+            column="name"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单字符串属性: 性别 -->
+          <property
+            name="sex"
+            column="sex"
+            type="string"
+            length="4"
+          />
+
+          <!-- 简单图片属性: 医生照片 -->
+          <property
+            name="doctorPhoto"
+            column="doctorPhoto"
+            type="string"
+            length="50"
+          />
+
+          <!-- 简单字符串属性: 学历 -->
+          <property
+            name="education"
+            column="education"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单日期型属性: 入院日期 -->
+          <property
+            name="inDate"
+            column="inDate"
+            	type="timestamp"
+            	length="10"
+          />
+
+          <!-- 简单字符串属性: 联系电话 -->
+          <property
+            name="telephone"
+            column="telephone"
+            type="string"
+            length="20"
+          />
+
+          <!-- 简单整型属性: 每日出诊次数 -->
+          <property
+            name="visiteTimes"
+            column="visiteTimes"
+            type="int"
+
+          />
+
+          <!-- 简单字符串属性: 附加信息 -->
+          <property
+            name="memo"
+            column="memo"
+            type="string"
+            length="2000"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

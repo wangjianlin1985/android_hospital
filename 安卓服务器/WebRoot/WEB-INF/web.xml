@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	
+	
+	<!-- 指定spring的配置文件，默认从web根目录寻找配置文件，我们可以通过spring提供的classpath:前缀指定从类路径下寻找 -->
+	<context-param>
+	   <param-name>contextConfigLocation</param-name>
+	   <param-value>classpath:beans.xml</param-value>
+	</context-param>
+	
+	
+	<!-- 对Spring容器进行实例化 -->
+	<listener>
+	      <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	
+	<!-- struts启用配置 -->
+	<filter>
+	      <filter-name>struts2</filter-name> 
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>*.action</url-pattern>
+    </filter-mapping>
+    
+    
+    <!-- 登录验证servlet配置 -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+      
+    <!-- 用户注册servlet配置 -->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!-- 上传图片servlet配置 -->
+    <servlet>
+        <servlet-name>UpPhotoServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.UpPhotoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpPhotoServlet</servlet-name>
+        <url-pattern>/UpPhotoServlet</url-pattern>
+    </servlet-mapping> 
+    
+    <!-- 用户管理servlet配置 -->
+    <servlet>
+        <servlet-name>UserInfoServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.UserInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserInfoServlet</servlet-name>
+        <url-pattern>/UserInfoServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 科室管理servlet配置 -->
+    <servlet>
+        <servlet-name>DepartmentServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.DepartmentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DepartmentServlet</servlet-name>
+        <url-pattern>/DepartmentServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 医生管理servlet配置 -->
+    <servlet>
+        <servlet-name>DoctorServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.DoctorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DoctorServlet</servlet-name>
+        <url-pattern>/DoctorServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 预约管理servlet配置 -->
+    <servlet>
+        <servlet-name>OrderInfoServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.OrderInfoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>OrderInfoServlet</servlet-name>
+        <url-pattern>/OrderInfoServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 时间段管理servlet配置 -->
+    <servlet>
+        <servlet-name>TimeSlotServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.TimeSlotServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TimeSlotServlet</servlet-name>
+        <url-pattern>/TimeSlotServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 出诊状态管理servlet配置 -->
+    <servlet>
+        <servlet-name>VisitStateServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.VisitStateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VisitStateServlet</servlet-name>
+        <url-pattern>/VisitStateServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- 留言管理servlet配置 -->
+    <servlet>
+        <servlet-name>LeaveWordServlet</servlet-name>
+        <servlet-class>com.mobileserver.servlet.LeaveWordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LeaveWordServlet</servlet-name>
+        <url-pattern>/LeaveWordServlet</url-pattern>
+    </servlet-mapping>
+
+ 
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

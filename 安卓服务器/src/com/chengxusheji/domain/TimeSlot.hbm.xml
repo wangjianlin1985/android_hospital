@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="TimeSlot" table="TimeSlot">
+
+          <!-- 主键时间段id -->
+          <id name="timeSlotId" column="timeSlotId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 简单字符串属性: 时间段名称 -->
+          <property
+            name="timeSlotName"
+            column="timeSlotName"
+            type="string"
+            length="60"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+ android:layout_width="fill_parent" 
+ android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android">  
+<LinearLayout 
+	android:orientation="vertical" 
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="@android:color/white">
+	<include layout="@layout/title" />
+	<TableLayout
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent" 
+		android:stretchColumns="1">
+		<TableRow> 
+			<TextView 
+				android:text="预约用户：" 
+				android:id="@+id/TV_uesrObj"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#0000ff"/>
+			<Spinner android:id="@+id/Spinner_uesrObj" 
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"/>
+		</TableRow>
+		<TableRow> 
+			<TextView 
+				android:text="预约医生：" 
+				android:id="@+id/TV_doctor"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#0000ff"/>
+			<Spinner android:id="@+id/Spinner_doctor" 
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"/>
+		</TableRow>
+		<TableRow> 
+			<TextView 
+				android:text="预约日期：" 
+				android:id="@+id/TV_orderDate"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#0000ff"/>
+			<DatePicker
+				android:id="@+id/dp_orderDate" 
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="left" />
+		</TableRow> 
+		<TableRow>
+			<TextView 
+				android:text="       " 
+				android:id="@+id/TextView"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#0000ff"/>
+    		<CheckBox 
+    		    android:text="预约日期参与查询" 
+    		    android:id="@+id/cb_orderDate" 
+    		    android:layout_width="wrap_content" 
+    		    android:layout_height="wrap_content"/>
+		</TableRow>
+		<TableRow> 
+			<TextView 
+				android:text="预约时间段：" 
+				android:id="@+id/TV_timeSlotObj"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#0000ff"/>
+			<Spinner android:id="@+id/Spinner_timeSlotObj" 
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"/>
+		</TableRow>
+		<TableRow> 
+			<TextView 
+				android:text="出诊状态：" 
+				android:id="@+id/TV_visiteStateObj"
+				android:layout_width="wrap_content" 
+				android:layout_height="wrap_content"
+				android:textColor="#0000ff"/>
+			<Spinner android:id="@+id/Spinner_visiteStateObj" 
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"/>
+		</TableRow>
+	</TableLayout>
+	<LinearLayout 
+		android:orientation="horizontal" 
+		android:layout_width="fill_parent"
+		android:layout_height="55dp" 
+		android:gravity="center">  
+		   <Button  
+				android:text="查询"
+				android:id="@+id/btnQuery"
+				android:layout_width="match_parent"
+				android:layout_height="48dp" 
+				android:layout_marginLeft="10dip"
+				android:layout_marginRight="10dip"
+				android:layout_marginTop="5dip"
+				android:background="#D64F4D"
+				android:textColor="@color/white" /> 
+	</LinearLayout>
+  </LinearLayout>
+</ScrollView>
+
+
+

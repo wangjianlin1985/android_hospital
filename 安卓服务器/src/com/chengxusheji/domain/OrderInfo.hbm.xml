@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.chengxusheji.domain">
+
+	<class name="OrderInfo" table="OrderInfo">
+
+          <!-- 主键预约id -->
+          <id name="orderId" column="orderId">
+            <generator class="native"/>
+          </id>
+
+          <!-- 多对一属性: 预约用户 -->
+          <many-to-one name="uesrObj"
+            column="uesrObj"
+            class="UserInfo"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 多对一属性: 预约医生 -->
+          <many-to-one name="doctor"
+            column="doctor"
+            class="Doctor"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单日期型属性: 预约日期 -->
+          <property
+            name="orderDate"
+            column="orderDate"
+            	type="timestamp"
+            	length="10"
+          />
+
+          <!-- 多对一属性: 预约时间段 -->
+          <many-to-one name="timeSlotObj"
+            column="timeSlotObj"
+            class="TimeSlot"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 多对一属性: 出诊状态 -->
+          <many-to-one name="visiteStateObj"
+            column="visiteStateObj"
+            class="VisitState"
+            lazy="false"
+            outer-join="true"
+            cascade="save-update"
+          />
+
+          <!-- 简单字符串属性: 医生说明 -->
+          <property
+            name="introduce"
+            column="introduce"
+            type="string"
+            length="60"
+          />
+
+
+		 
+		
+	</class>
+	
+</hibernate-mapping>
+ 
